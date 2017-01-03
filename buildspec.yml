@@ -7,15 +7,15 @@ environment_variables:
 phases:
   install:
     commands:
-      - apt-get update -y
-      - apt-get install -y maven
+      - sudo apt-get update -y
+      - sudo apt-get install -y maven
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - sudo mvn install
   post_build:
     commands:
       - echo Build completed on `date`

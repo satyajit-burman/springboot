@@ -3,18 +3,20 @@ version: 0.1
 phases:
   install:
     commands:
+      - sudo apt-get autoclean
+      - sudo apt-get --force-yes remove maven
       - sudo apt-get update -y
       - sudo apt-get install -y maven
       - sudo java -version
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
-      - sudo mvn -version
+      - sudo /usr/bin/mvn -version
   build:
     commands:
       - echo Build started on `date`
       - echo mvn version `mvn -version`
-      - sudo mvn install
+      - sudo /usr/bin/mvn install
   post_build:
     commands:
       - echo Build completed on `date`

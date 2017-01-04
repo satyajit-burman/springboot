@@ -3,6 +3,8 @@ version: 0.1
 phases:
   install:
     commands:
+      - sudo ls -l ~/.m2
+      - sudo rm -rf ~/.m2
       - sudo apt-get autoclean
       - sudo apt-get update -y
       - sudo apt-get install -yf maven

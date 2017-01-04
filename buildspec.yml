@@ -3,6 +3,7 @@ version: 0.1
 phases:
   install:
     commands:
+      - sudo cat ~/.m2/settings.xml
       - sudo ls -l ~/.m2
       - sudo rm -rf ~/.m2
       - sudo apt-get autoclean

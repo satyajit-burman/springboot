@@ -10,6 +10,8 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+      - sudo which mvn
+      - echo which mvn
       - sudo /usr/share/maven/bin/mvn -version
   build:
     commands:

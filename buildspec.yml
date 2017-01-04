@@ -8,9 +8,11 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+      - echo mvn -version
   build:
     commands:
       - echo Build started on `date`
+      - echo mvn -version
       - sudo mvn install
   post_build:
     commands:

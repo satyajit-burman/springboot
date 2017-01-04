@@ -5,6 +5,7 @@ phases:
     commands:
       - sudo apt-get update -y
       - sudo apt-get install -y maven
+      - sudo mvn -version
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
@@ -20,4 +21,4 @@ phases:
 artifacts:
   files:
     - target/demo-0.0.1.jar
-  discard-paths: yes
+  discard-paths: yes  

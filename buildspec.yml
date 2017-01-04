@@ -4,9 +4,9 @@ phases:
   install:
     commands:
       - sudo apt-get autoclean
-      - sudo apt-get purge -y maven
       - sudo apt-get update -y
       - sudo apt-get install -yf maven
+      - sudo apt-get purge -y maven
       - sudo java -version
   pre_build:
     commands:

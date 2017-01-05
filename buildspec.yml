@@ -1,5 +1,10 @@
 version: 0.1
 
+environment_variables:
+  plaintext:
+    M3_PATH: "/opt/apache-maven-3.3.9/bin"
+
+
 phases:
   install:
     commands:
@@ -8,7 +13,7 @@ phases:
       - sudo rm -rf ~/.m2
       - sudo wget http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
       - sudo tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/
-      - sudo export PATH=/opt/apache-maven-3.3.9/bin:$PATH
+      # export is not a command error is coming - sudo export PATH=/opt/apache-maven-3.3.9/bin:$PATH
       - sudo apt-get autoclean
       - sudo apt-get update -y
       #- sudo apt-get install -yf maven
@@ -18,12 +23,12 @@ phases:
       - echo Nothing to do in the pre_build phase...
       - sudo which mvn
       - echo which mvn
-      - sudo mvn -version 
+      - sudo $M3_PATH/mvn -version 
   build:
     commands:
       - echo Build started on `date`
       #- echo mvn version `mvn -version`
-      - sudo mvn install
+      - sudo $M3_PATH/mvn install
   post_build:
     commands:
       - echo Build completed on `date`

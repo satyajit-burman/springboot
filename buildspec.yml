@@ -6,21 +6,24 @@ phases:
       - sudo cat ~/.m2/settings.xml
       - sudo ls -l ~/.m2
       - sudo rm -rf ~/.m2
+      - sudo wget http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+      - sudo tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/apache-maven-3.3.9/
+      - sudo export PATH=/opt/apache-maven-3.3.9/bin:$PATH
       - sudo apt-get autoclean
       - sudo apt-get update -y
-      - sudo apt-get install -yf maven
+      #- sudo apt-get install -yf maven
       - sudo java -version
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
       - sudo which mvn
       - echo which mvn
-      #- sudo mvn -version 
+      - sudo mvn -version 
   build:
     commands:
       - echo Build started on `date`
       #- echo mvn version `mvn -version`
-      - sudo mvn -Dmaven.repo.local=./xx install
+      - sudo mvn install
   post_build:
     commands:
       - echo Build completed on `date`

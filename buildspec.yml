@@ -7,7 +7,7 @@ phases:
       - sudo ls -l ~/.m2
       - sudo rm -rf ~/.m2
       - sudo wget http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-      - sudo tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/apache-maven-3.3.9/
+      - sudo tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/
       - sudo export PATH=/opt/apache-maven-3.3.9/bin:$PATH
       - sudo apt-get autoclean
       - sudo apt-get update -y

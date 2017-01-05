@@ -15,12 +15,12 @@ phases:
       - echo Nothing to do in the pre_build phase...
       - sudo which mvn
       - echo which mvn
-      - sudo mvn -version
+      #- sudo mvn -version 
   build:
     commands:
       - echo Build started on `date`
-      - echo mvn version `mvn -version`
-      - sudo mvn install
+      #- echo mvn version `mvn -version`
+      - sudo mvn -Dmaven.repo.local=./xx install
   post_build:
     commands:
       - echo Build completed on `date`
